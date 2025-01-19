@@ -1,0 +1,235 @@
+:root {
+  --box-size: 55px;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+#grid{
+  display: grid;
+  grid-template-columns: repeat(9, calc(var(--box-size)));
+  width: calc(9*var(--box-size));
+  margin: auto;
+}
+
+.cell {
+  border: 1px solid black;
+  width: var(--box-size);
+  height: var(--box-size);
+}
+
+.cell>input {
+  border: none;
+  background: none;
+  height: var(--box-size);
+  width: var(--box-size);
+  font-size: 30px;
+  text-align: center;
+  padding: 0;
+}
+
+.red {
+  background-color: red;
+}
+
+.green  {
+  background-color: green;
+}
+
+body {
+  text-align: center;
+}
+
+a {
+  position: relative;
+  width: 100%;
+  padding-top: 25.92%;
+  display: block;
+  background-size: 100% 100%;
+  font-family: 'luckiest guy';
+  font-size: 28px;
+  margin-bottom: 20px;
+  text-decoration: none;
+  color: #333;
+}
+
+a.background-button {
+  background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/323909/yellow-shadow.png);
+
+  &:after {
+    content: attr(title);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/323909/yellow-top.png);
+    transition: all 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &:hover:after {
+    -webkit-transform: translate(2.5%, 10%);
+    transform: translate(2.5%, 10%);
+    text-shadow: 2px 2px 1px white;
+    color: black;
+  }
+}
+
+.button-wrapper {
+  width: 255px;
+  display: inline-block;
+  margin: 20px;
+
+  &:nth-child(1) a {
+    -webkit-filter: hue-rotate(72deg);
+    filter: hue-rotate(72deg);
+  }
+}
+
+@import url(https://fonts.googleapis.com/css?family=Electrolize);
+
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.space-btn {
+  position: relative;
+  font-family: 'Electrolize', sans-serif;
+  font-size: 1em;
+  text-transform: uppercase;
+  letter-spacing: 0.125em;
+  line-height: 1;
+  color: #e42c17;
+  margin: 0;
+  margin-bottom: 25px;
+  margin-top: 25px;
+  padding: 1em;
+  background: none;
+  border: none;
+  cursor: pointer;
+
+  &:hover {
+    color: lighten(#e42c17, 20%);
+  }
+
+  &:focus {
+    color: lighten(#e42c17, 10%);
+    outline: none;
+  }
+
+  &:active {
+    color: #e42c17;
+  }
+
+  &:before,
+  &:after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 1px;
+  }
+
+  &:before {
+    top: 0;
+    left: 0;
+    box-shadow: inset 1px 1px 0 0 #e42c17;
+  }
+
+  &:after {
+    right: 0;
+    bottom: 0;
+    box-shadow: inset -1px -1px 0 0 #e42c17;
+  }
+
+}
+
+.space-btn:hover {
+  &:before {
+    animation: hoverShadowBefore 1s forwards;
+  }
+
+  &:after {
+    animation: hoverShadowAfter 1s forwards;
+  }
+}
+
+@keyframes hoverShadowBefore {
+  0% {
+    width: 100%;
+    height: 1px;
+
+    top: 0;
+    left: 0;
+  }
+
+  33% {
+    width: 1px;
+    height: 100%;
+
+    top: 0;
+    left: 0;
+  }
+
+  66% {
+    width: 1px;
+    height: 1px;
+
+    top: calc(100% - 1px);
+    left: 0;
+  }
+
+  100% {
+    width: 100%;
+    height: 1px;
+
+    top: calc(100% - 1px);
+    left: 0;
+  }
+}
+
+@keyframes hoverShadowAfter {
+  0% {
+    width: 100%;
+    height: 1px;
+  }
+
+  33% {
+    width: 1px;
+    height: 100%;
+
+    bottom: 0;
+    right: 0;
+  }
+
+  66% {
+    width: 1px;
+    height: 1px;
+
+    bottom: calc(100% - 1px);
+    right: 0;
+  }
+
+  100% {
+    width: 100%;
+    height: 1px;
+
+    bottom: calc(100% - 1px);
+    right: 0;
+  }
+}
