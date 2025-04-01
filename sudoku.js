@@ -74,17 +74,17 @@ class Sudoku {
                 this.highlight([idx, ...colIdx], "INCORRECT")
             }
         });
-        if(flag) this.highlight([idx, ...boxIdx, ...colIdx, ...rowIdx], "CORRECT")
+        if (flag) this.highlight([idx, ...boxIdx, ...colIdx, ...rowIdx], "CORRECT")
         return flag;
     };
 
     highlight = (idxs, state) => {
-        if(state === "CORRECT") {
+        if (state === "CORRECT") {
             idxs.forEach((idx) => {
                 this.inputs[idx].parentElement.classList.add("green")
             })
         }
-        if(state === "INCORRECT") {
+        if (state === "INCORRECT") {
             idxs.forEach((idx) => {
                 this.inputs[idx].parentElement.classList.add("red")
             })
