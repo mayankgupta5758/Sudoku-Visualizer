@@ -9,7 +9,7 @@
   align-items: center;
 }
 
-#grid{
+#grid {
   display: grid;
   grid-template-columns: repeat(9, calc(var(--box-size)));
   width: calc(9*var(--box-size));
@@ -36,7 +36,7 @@
   background-color: red;
 }
 
-.green  {
+.green {
   background-color: green;
 }
 
